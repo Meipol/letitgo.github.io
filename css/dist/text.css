@@ -1,0 +1,57 @@
+/* article */
+main {
+  box-sizing: border-box;
+  margin: auto;
+  max-width: 900px;
+  margin-bottom: 3rem;
+  position: relative;
+  padding: 1.5rem;
+}
+
+main h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+main p {
+  margin: auto;
+  line-height: var(--line-height);
+  hyphens: auto;
+}
+
+@media (max-width: 667px) {
+  main p {
+    text-align: left;
+    hyphens: none;
+  }
+}
+main .essay-question {
+  padding-top: 0.5rem;
+  font-size: var(--font-size--article);
+  font-family: var(--title-font-family);
+  margin-top: 2rem;
+  margin-left: 2rem;
+  color: var(--main-pink);
+}
+
+.essay-header {
+  width: 100vw;
+}
+
+.essay {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.essay-body .essay-body-inner {
+  width: 55vw;
+  color: var(--main-blue);
+  margin: 0 20vw;
+  font-size: var(--font-size--article);
+  line-height: 2rem;
+  padding-bottom: 3rem;
+  background-color: rgba(240, 248, 255, 0.672);
+  padding: 5rem;
+}

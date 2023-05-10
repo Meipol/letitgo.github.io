@@ -1,0 +1,177 @@
+/* Cards */
+.container {
+  display: grid;
+  position: absolute;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 82vh;
+  width: 94vw;
+}
+@media only screen and (min-device-width: 813px) and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-width: 668px) and (-webkit-min-device-pixel-ratio: 2), only screen and (orientation: landscape) {
+  .container {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 13%;
+  }
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+    top: 1%;
+  }
+}
+
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  min-height: 14vw;
+  margin: 0.1rem;
+  cursor: pointer;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .flip-card {
+    min-height: 30vh;
+  }
+}
+
+.js-tilt-glare {
+  border-radius: var(--border-radius);
+}
+
+.unavailable {
+  color: grey !important;
+}
+.unavailable .index {
+  display: none;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.flip-card-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--border-radius);
+  color: var(--main-blue);
+}
+
+.flip-card-front {
+  background: var(--card-front-color);
+  box-shadow: var(--card-front-inset-color);
+}
+.flip-card-front .symbol-front {
+  position: relative;
+  color: white;
+  top: calc(50% - 1.4rem);
+}
+.flip-card-front .symbol-front h1 {
+  font-family: "IPAMincho", "Arial Unicode MS", Arial, Helvetica, sans-serif;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .flip-card-front .symbol-front h1 {
+    font-family: "IPAMincho", "Arial Unicode MS";
+  }
+}
+
+.flip-card-back {
+  position: absolute;
+  transform: rotateY(180deg);
+  background: var(--card-back-color);
+  box-shadow: var(--card-back-inset-color);
+}
+.flip-card-back .index {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: white;
+  padding: 0 0.2rem;
+  background: var(--yellow);
+  border-radius: 1rem;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .flip-card-back .index {
+    font-size: 0.5rem;
+  }
+}
+.flip-card-back .exp {
+  background: var(--pink);
+}
+.flip-card-back .text-wrapper {
+  display: grid;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.flip-card-back .text-title {
+  font-family: var(--title-font-family);
+  line-height: 1.2rem;
+  max-width: 100%;
+  text-transform: uppercase;
+  margin: 0 1rem;
+}
+@media only screen and (min-device-width: 813px) and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-width: 668px) and (-webkit-min-device-pixel-ratio: 2), only screen and (orientation: landscape) {
+  .flip-card-back .text-title {
+    letter-spacing: var(--letter-spacing);
+  }
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .flip-card-back .text-title {
+    font-size: 1rem;
+    line-height: 1rem;
+    margin: 0.1rem 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: normal;
+  }
+}
+.flip-card-back .text-quote {
+  margin: 0.2rem 1.5rem;
+  font-family: var(--font-family);
+  line-height: 1.2rem;
+  font-size: var(--font-size);
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .flip-card-back .text-quote {
+    margin: 0 1.5rem;
+    font-size: var(--font-size--mobile--secondary);
+    line-height: 1rem;
+    text-align: center;
+  }
+}
+.flip-card-back .p-quote {
+  margin-bottom: 0.4rem;
+}
+
+.abbriviation {
+  position: fixed;
+  bottom: 0.5rem;
+  color: var(--card-front-color);
+  width: 94vw;
+  font-size: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .abbriviation {
+    display: none;
+  }
+}

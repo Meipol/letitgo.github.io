@@ -1,0 +1,54 @@
+.text-about {
+  position: absolute;
+  display: block;
+  color: var(--main-blue);
+  margin: 10rem 20rem;
+  font-size: var(--font-size--article);
+  line-height: var(--line-height);
+  border-radius: var(--border-radius);
+  text-align: left;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .text-about {
+    font-size: var(--font-size--mobile);
+    width: 80%;
+    margin: 2rem 1rem;
+    padding-bottom: 4rem;
+  }
+}
+.text-about p {
+  padding-bottom: 1rem;
+}
+
+.team-picture {
+  position: absolute;
+  opacity: 0.3;
+  left: 50%;
+  padding-top: 8rem;
+  transform: translateX(-50%);
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in;
+}
+.team-picture:hover {
+  -webkit-filter: none;
+  filter: none;
+  z-index: 10;
+  opacity: 1;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .team-picture {
+    top: 43rem;
+  }
+}
+
+img {
+  height: 80vh;
+}
+
+.gif {
+  position: fixed;
+  top: 40rem;
+  right: 40rem;
+  max-width: 2rem;
+}

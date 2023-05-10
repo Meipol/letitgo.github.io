@@ -1,0 +1,222 @@
+/* Dropdown menu for mobile */
+.wrap {
+  position: fixed;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  border-radius: 4px;
+  transform: translateY(20px);
+  transition: all 0.5s;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.wrap .content {
+  opacity: 0;
+  left: 50%;
+  bottom: 28%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+}
+
+.wrap:before {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: linear-gradient(0deg, white 36%, #a5bafe 100%);
+  content: "";
+  bottom: 10px;
+  left: 50%;
+  top: 95%;
+  border-radius: 50%;
+  -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  filter: blur(10px);
+}
+
+.wrap.active {
+  display: block;
+  visibility: visible;
+  box-shadow: 2px 3px 16px silver;
+  transition: all 600ms;
+  transform: translateY(0px);
+  transition: all 0.5s;
+}
+
+.wrap.active:before {
+  height: 2000px;
+  width: 2000px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-left: -1000px;
+  margin-top: -1000px;
+  display: block;
+  -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.wrap.active .content {
+  position: absolute;
+  opacity: 1;
+  transition: all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  text-align: center;
+  z-index: 100;
+}
+.wrap.active .content a {
+  color: var(--main-blue);
+  text-decoration: none;
+  display: block;
+  font-size: 3rem;
+  z-index: 100;
+  text-shadow: none;
+  letter-spacing: 2.12;
+}
+
+.in_progress .active {
+  color: grey !important;
+  filter: none;
+  cursor: default;
+}
+@media only screen and (min-device-width: 813px) and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-width: 668px) and (-webkit-min-device-pixel-ratio: 2), only screen and (orientation: landscape) {
+  .in_progress .active {
+    transform: translateX(1rem);
+  }
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .in_progress .active {
+    transform: translateX(0.5rem);
+  }
+}
+.in_progress .active span.soon {
+  vertical-align: super;
+  cursor: pointer;
+  transition: color 0.1s;
+  padding: 0 0.2rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: white;
+  padding: 0 0.2rem;
+  background: #b8b8b8;
+  border-radius: 1rem;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .in_progress .active span.soon {
+    font-size: 0.6rem;
+  }
+}
+
+a.button {
+  outline: none;
+  width: 100vw;
+  text-align: center;
+  font-size: 3rem;
+  display: block;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: auto;
+  text-decoration: none;
+  transition: transform 0.25s;
+  z-index: 100;
+  color: var(--main-blue);
+  text-shadow: none;
+  filter: none;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  a.button {
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 50%);
+    padding: 1rem;
+  }
+}
+@media only screen and (min-device-width: 813px) and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-width: 668px) and (-webkit-min-device-pixel-ratio: 2), only screen and (orientation: landscape) {
+  a.button {
+    filter: none;
+    font-size: 5rem;
+    color: var(--card-front-color);
+  }
+}
+
+a.button.active {
+  transform: rotateX(135deg);
+  transition: transform 0.5s;
+  transform: translateX(-50%);
+  filter: none;
+}
+
+a.button:hover {
+  cursor: url("https://cinni.net/images/nature/tulipcloud.gif"), auto;
+}
+
+/* Desktop menu*/
+.navigation__container {
+  position: absolute;
+  z-index: 3;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .navigation__container .navigation {
+    position: fixed;
+    display: none;
+    flex-wrap: wrap;
+    font-size: var(--font-size--mobile--secondary);
+  }
+  .navigation__container .navigation .navigation__item {
+    margin: 2rem;
+    padding: 1rem 2rem;
+    background: white;
+    border-radius: var(--border-radius);
+  }
+}
+@media only screen and (min-device-width: 813px) and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-width: 668px) and (-webkit-min-device-pixel-ratio: 2), only screen and (orientation: landscape) {
+  .navigation__container .navigation .highlight {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    color: white;
+    padding: 2px 6px;
+    border-right: 1px dotted white;
+    border-bottom: 1px dotted white;
+  }
+  .navigation__container .navigation #nav-about {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    border-left: 1px dotted white;
+    border-bottom: 1px dotted white;
+    padding: 2px 6px;
+  }
+  .navigation__container .navigation #nav-contact {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 2px 6px;
+  }
+  .navigation__container .navigation #nav-contact .svg-container {
+    display: inline-block;
+    height: auto;
+  }
+  .navigation__container .navigation #nav-contact .svg-container svg {
+    shape-rendering: geometricPrecision;
+    max-width: 29px;
+  }
+  .navigation__container .navigation #nav-patreon {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    border-right: 1px dotted white;
+    border-top: 1px dotted white;
+    padding: 2px 6px;
+  }
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

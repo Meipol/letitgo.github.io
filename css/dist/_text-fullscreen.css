@@ -1,0 +1,243 @@
+strong {
+  font-weight: 300;
+  text-shadow: var(--text-shadow);
+}
+
+.subheader {
+  font-family: var(--title-font-family);
+  margin-top: 2rem;
+  font-size: 3rem;
+  line-height: 1;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .subheader {
+    font-size: 2rem;
+  }
+}
+
+.arrow a {
+  position: fixed;
+  font-size: 3rem;
+  padding-right: 1rem;
+  text-align: right;
+  font-family: "IPAMincho", monospace;
+  width: 100vw;
+}
+
+.next-text {
+  display: flex;
+  font-size: 5rem;
+  justify-content: right;
+  font-family: "IPAMincho", monospace;
+}
+
+.essay-wrapper {
+  width: 100%;
+  background: var(--card-back-color);
+  box-shadow: var(--card-back-inset-color);
+  padding-bottom: 3rem;
+}
+
+.essay-body {
+  padding: 0 4rem;
+  width: 64%;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .essay-body {
+    width: 100%;
+    margin-left: 0;
+    padding: 0;
+  }
+}
+.essay-body .essay-header {
+  padding-top: 10rem;
+}
+.essay-body .essay-header h1 {
+  font-size: 6rem;
+  padding: 0rem 4rem;
+  line-height: 5rem;
+  letter-spacing: 0.5rem;
+  font-family: var(--title-font-family);
+  text-transform: uppercase;
+  text-align: center;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .essay-body .essay-header h1 {
+    font-size: 2.7rem;
+    line-height: 3rem;
+    margin-bottom: 0;
+    padding: 0 2rem;
+  }
+}
+
+.essay-author-date {
+  font-size: var(--font-size--article);
+  margin: 0 5rem;
+  text-align: center;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .essay-author-date {
+    font-size: 0.8rem;
+    margin: 0 2rem;
+  }
+}
+
+.essay-content {
+  margin-top: 4rem;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.essay-body .essay-content {
+  width: 100%;
+  font-size: var(--font-size--article);
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .essay-body .essay-content {
+    font-size: var(--font-size--mobile);
+    padding: 0 2rem;
+    padding: 0 2rem;
+    margin-top: 1rem;
+    font-family: "Tilda Sans Regular";
+  }
+}
+.essay-body .essay-content .essay-question {
+  margin-top: 0.8rem;
+  font-family: var(--questions-font-family);
+  line-height: 1.1;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .essay-body .essay-content .essay-question {
+    font-size: var(--font-size--mobile);
+  }
+}
+.essay-body .essay-content p {
+  margin: auto;
+  text-indent: 4rem;
+  hyphens: none;
+  line-height: var(--line-hight-article);
+  word-spacing: var(--word-spacing);
+  letter-spacing: var(--letter-spacing-article);
+}
+
+.image {
+  display: none;
+  position: fixed;
+  top: 25%;
+  right: 5rem;
+  bottom: 5%;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  opacity: 0.2;
+  overflow: hidden;
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in;
+}
+.image img {
+  max-width: 100%;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .image img {
+    display: none;
+  }
+}
+.image:hover {
+  -webkit-filter: none;
+  filter: none;
+  opacity: 1;
+  z-index: 10;
+}
+.image::before {
+  display: none;
+  content: " ";
+  position: absolute;
+  border: 1px red solid;
+  border-radius: 2rem;
+  top: 4%;
+  left: 4%;
+  width: 92%;
+  height: 92%;
+}
+
+/* footnotes */
+p input {
+  display: none;
+}
+
+/* Sup text */
+p input + label {
+  font-size: 1rem;
+  color: var(--card-front-color);
+  vertical-align: super;
+  cursor: pointer;
+  transition: color 0.1s;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  p input + label {
+    font-size: 0.6rem;
+  }
+}
+
+p input + label:before {
+  content: "[";
+}
+
+p input + label:after {
+  content: "]";
+}
+
+p input + label:hover {
+  color: #838374;
+}
+
+/* Footnote text */
+small {
+  color: #838374;
+}
+
+p input + label + small {
+  transition: opacity 0.2s 0.05s;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+p input:checked + label + small {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+}
+
+p.hover input + label + small,
+p.hover input:checked + label + small {
+  display: none;
+}
+
+p.block input:checked + label + small {
+  display: block;
+  color: var(--card-front-color);
+  padding: 1ch 3ch;
+  font-size: var(--font-size);
+}
+
+p.hover input + label:hover + small {
+  font-size: 0.8em;
+  font-family: "Zhizn";
+  z-index: 1;
+  position: absolute;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  padding: 0.3em 0.8em 0.4em;
+  border-bottom: 1px;
+  left: 70%;
+  background: var(--card-front-color);
+  color: #eee;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  pointer-events: none;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  p.hover input + label:hover + small {
+    left: 10%;
+  }
+}

@@ -1,0 +1,192 @@
+.author-date {
+  display: flex;
+  text-align: center;
+  font-family: var(--title-font-family);
+  font-size: var(--font-size);
+  padding: 0 5rem;
+  justify-content: space-between;
+}
+
+.essay-body {
+  position: relative;
+  margin-left: 10vw;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  width: 55%;
+  background: var(--card-back-color);
+  box-shadow: var(--card-front-inset-color);
+  border-radius: var(--border-radius);
+  hyphens: none;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .essay-body {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+.essay-body .essay-header {
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+}
+.essay-body .essay-header h1 {
+  font-size: 5rem;
+  padding: 0rem 5rem;
+  line-height: 5rem;
+  text-align: left;
+  font-family: var(--title-font-family);
+  text-transform: uppercase;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .essay-body .essay-header h1 {
+    font-size: 1rem;
+    line-height: 1rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.essay-body-inner {
+  padding: 0 5rem;
+}
+
+.essay-body .essay-body-inner {
+  width: 100%;
+  font-size: var(--font-size--article);
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .essay-body .essay-body-inner {
+    font-size: var(--font-size--mobile);
+  }
+}
+.essay-body .essay-body-inner .essay-question {
+  font-size: 2rem;
+  font-family: var(--title-font-family);
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .essay-body .essay-body-inner .essay-question {
+    font-size: var(--font-size--mobile);
+  }
+}
+.essay-body .essay-body-inner .essay {
+  width: 100%;
+  overflow-x: hidden;
+}
+.essay-body .essay-body-inner p {
+  margin: auto;
+  line-height: var(--line-height);
+  word-spacing: var(--word-spacing);
+}
+
+.text-navigation {
+  display: flex;
+  font-family: var(--title-font-family);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem 1rem;
+}
+.text-navigation .all-texts {
+  flex: 50%;
+}
+
+.image {
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 70%;
+  filter: blur(40px);
+  transition: filter 1s;
+}
+.image img {
+  max-width: 100%;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .image img {
+    display: none;
+  }
+}
+.image:hover {
+  filter: none;
+}
+
+/* footnotes */
+footer {
+  margin-top: 50px;
+  border-top: 1px dotted var(--main-blue);
+  font-size: var(--font-size);
+  padding: 1rem 0;
+}
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait), only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  footer {
+    font-size: var(--font-size--mobile--secondary);
+  }
+}
+
+footer ol {
+  padding-left: 20px;
+}
+
+/**
+ * Initialiazing a `footnotes` counter on the wrapper
+ */
+article {
+  counter-reset: footnotes;
+}
+
+/**
+ * Inline footnotes references
+ * 1. Increment the counter at each new reference
+ * 2. Reset link styles to make it appear like regular text
+ */
+[aria-describedby=footnote-label] {
+  counter-increment: footnotes;
+  /* 1 */
+  text-decoration: none;
+  /* 2 */
+  color: inherit;
+  /* 2 */
+  cursor: default;
+  /* 2 */
+  outline: none;
+  /* 2 */
+}
+
+/**
+ * Actual numbered references
+ * 1. Display the current state of the counter (e.g. `[1]`)
+ * 2. Align text as superscript
+ * 3. Make the number smaller (since it's superscript)
+ * 4. Slightly offset the number from the text
+ * 5. Reset link styles on the number to show it's usable
+ */
+[aria-describedby=footnote-label]::after {
+  content: "[" counter(footnotes) "]";
+  /* 1 */
+  vertical-align: super;
+  /* 2 */
+  font-size: var(--font-size);
+  /* 3 */
+  margin-left: 2px;
+  /* 4 */
+  color: var(--main-blue);
+  /* 5 */
+  cursor: pointer;
+  /* 5 */
+}
+
+/**
+ * Resetting the default focused styles on the number
+ */
+[aria-describedby=footnote-label]:focus::after {
+  outline: thin dotted;
+  outline-offset: 2px;
+}
+
+[aria-label="Back to content"] {
+  font-size: var(--font-size);
+}
+
+/**
+ * Highlight target note
+ */
+footer :target {
+  background: var(--card-back-color);
+}

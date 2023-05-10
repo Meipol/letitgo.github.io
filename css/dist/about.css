@@ -1,0 +1,30 @@
+.text-about {
+  position: fixed;
+  color: var(--main-blue);
+  width: 60vw;
+  top: 13vh;
+  left: 10rem;
+  font-size: var(--font-size--article);
+  line-height: 2rem;
+  background-color: #ffffff66;
+  padding: 20rem 7rem;
+}
+
+.team-picture img {
+  position: fixed;
+  top: 17vh;
+  right: 5vw;
+  max-width: 20vw;
+}
+.team-picture img:hover img {
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}
+
+.team-blur img {
+  position: fixed;
+  top: 10vh;
+  right: 5vw;
+  max-width: 35vw;
+  filter: blur(4.5rem);
+}
