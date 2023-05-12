@@ -142,7 +142,7 @@ button, .slider {
   width: 100%;
   height: 100%;
   z-index: 101;
-  background: linear-gradient(-5deg, #667ffb, #839cf8, #76bbfb, #fff2de);
+  background: linear-gradient(-56deg, #667ffb, #ffb8f9, #c8e5ff, #fff2de);
   background-size: 400% 400%;
   animation: gradient 25s ease infinite;
 }

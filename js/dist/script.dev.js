@@ -23,7 +23,7 @@ $(document).ready(function () {
 
   input.keypress(function (event) {
     if (event.keyCode === 13) {
-      alert("words trapped on a screen, one by one let them go");
+      alert("words are trapped on a screen, one by one let them go");
       generateTiles();
     }
   });
