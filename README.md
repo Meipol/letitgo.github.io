@@ -1,4 +1,4 @@
-# Dreaming of a dead hamster
+# One night I will stop dreaming of my dead hamster
 
 This is a little project I created during a Digital Typography workshop with Klasse Digitale Grafik. 
 
