@@ -7,34 +7,6 @@
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "CMU Concrete";
-  src: url("/fonts/CMUConcrete-Italic.woff2") format("woff2"), url("/fonts/CMUConcrete-Italic.woff") format("woff");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Tilda Sans Light";
-  src: url("/fonts/TildaSans-Light.woff2") format("woff2"), url("/fonts/TildaSans-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Manege";
-  src: url("/fonts/ManegeDemo-Light.woff2") format("woff2"), url("/fonts/ManegeDemo-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "IPAMincho";
-  src: url("/fonts/IPAMincho.woff2") format("woff2"), url("/fonts/IPAMincho.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 /* Import mixins and variables */
 /* Reset */
 *,
